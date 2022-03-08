@@ -1,1 +1,3 @@
 *.json
+masala/__pycache__/
+masala/spiders/__pycache__/

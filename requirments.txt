@@ -1,0 +1,4 @@
+scrapy
+hashlib
+requests
+scrapyd
