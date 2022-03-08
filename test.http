@@ -15,4 +15,4 @@
 
 # curl https://masala-test.herokuapp.com/schedule.json -d project=masala -d spider=mspy
 
-# curl https://masala-test.herokuapp.com/daemonstatus.json
+curl https://masala-test.herokuapp.com/daemonstatus.json

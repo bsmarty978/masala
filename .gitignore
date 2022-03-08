@@ -12,3 +12,5 @@ project.egg-info/
 *.csv
 setup.py
 test.http
+.env
+test.http
