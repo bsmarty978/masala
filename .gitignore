@@ -10,3 +10,4 @@ eggs/
 project.egg-info/
 
 *.csv
+setup.py
