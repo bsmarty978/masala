@@ -1,6 +1,0 @@
-scrapy
-hashlib
-requests
-scrapyd
-scrapyd-client
-herokuify-scrapyd
