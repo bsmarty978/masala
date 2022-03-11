@@ -2,11 +2,13 @@ import scrapy
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
 import hashlib
+from datetime import datetime
 
 class MspySpider(CrawlSpider):
     name = 'mspy'
     allowed_domains = ['masahub.net']
     start_urls = ['http://masahub.net/']
+    last_update = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
 
     rules = (
         Rule(LinkExtractor(restrict_xpaths="//li[@class='thumi']/a[1]"), callback='parse_item', follow=False),
@@ -26,7 +28,9 @@ class MspySpider(CrawlSpider):
                 "title":title,
                 "main_src":response.url,
                 "src":src_link,
-                "tags" : tags
+                "tags" : tags,
+                "other_urls" : [],
+                "last_update" : self.last_update
             }
         else:
             pass

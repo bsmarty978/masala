@@ -62,9 +62,12 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'masala.pipelines.MasalaPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'masala.pipelines.MasalaPipeline': 300,
+}
+MONGO_URI = "mongodb+srv://masadmin1:masalaDBadm886612@cluster0.wcon8.mongodb.net/MasalaData?retryWrites=true&w=majority"
+
+
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -86,3 +89,4 @@ ROBOTSTXT_OBEY = True
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+FEED_EXPORT_ENCODING = 'utf-8'
