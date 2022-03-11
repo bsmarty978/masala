@@ -7,9 +7,10 @@ __pycache__/
 build/
 dbs/
 eggs/
+logs/
 project.egg-info/
 
 *.csv
 test.http
 .env
-test.http
+
