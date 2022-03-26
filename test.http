@@ -15,6 +15,16 @@
 
 # curl https://masala-test.herokuapp.com/schedule.json -d project=masala -d spider=mspy
 
-curl https://masala-test.herokuapp.com/schedule.json -d project=masala -d spider=msallspy
+curl https://masala-test.herokuapp.com/schedule.json -d project=default -d spider=msallspy
+
+# curl https://masala-test.herokuapp.com/schedule.json -d project=masala -d spider=msallspy
 
 # curl https://masala-test.herokuapp.com/daemonstatus.json
+
+# GET https://desi49.com
+
+# POST https://masala-test.herokuapp.com/schedule.json
+# {
+#     "project": "masala",
+#     "spider" : "mspy"
+# }
