@@ -64,6 +64,22 @@ class MasalaPipeline:
             tCollection = self.db[self.today_collection]
             tCollection.insert(item)
             self.t_item_c +=1
+            cCollection = self.db[self.completed_collection]
+            item_lookup = cCollection.find({"vid":item["vid"]})
+            if item_lookup.count()==1:
+                if item_lookup[0]["src"] != item["src"]:
+                    item["other_urls"].append(item_lookup[0]["src"])
+
+                    cCollection.delete_one({"vid":item["vid"]})
+                    cCollection.insert(item)
+                    
+                    lg.warning(f'Updated--->>{item["vid"]}')
+
+                    self.u_item_c+=1
+            else:
+                cCollection.insert(item)
+                lg.warning(f'Added--->>{item["vid"]}')
+                self.n_item_c+=1
             return item
         
         elif spider.name=="msallspy":
