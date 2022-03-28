@@ -3,12 +3,14 @@ from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
 import hashlib
 from datetime import datetime
+from pytz import timezone
 
 class MsallspySpider(CrawlSpider):
     name = 'msallspy'
     allowed_domains = ['masahub.net']
     start_urls = ['http://masahub.net/']
-    last_update = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+    last_update = datetime.now(timezone("Asia/Kolkata")).strftime("%Y-%m-%dT%H:%M:%S")
+
 
     rules = (
         Rule(LinkExtractor(restrict_xpaths="//li[@class='thumi']/a[1]"), callback='parse_item', follow=False),

@@ -1,6 +1,7 @@
 scrapy==2.5.1
 scrapyd==1.3.0
 scrapydweb==1.4.0
+pytz
 pymongo==3.9.0
 dnspython
 scrapyd-client==1.2.0
